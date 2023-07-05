@@ -9,11 +9,16 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var buttonSignIn: UIButton!
+    @IBOutlet weak var buttonSignUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buttonSignIn.addBorder()
+        buttonSignUp.addBorder()
         // Do any additional setup after loading the view.
     }
+    
+    
     
     @IBAction func signUpAction(_ sender: UIButton) {
         if let registerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? KYCPageViewController {

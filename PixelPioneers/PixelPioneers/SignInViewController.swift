@@ -9,11 +9,14 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var buttonSignup: UIButton!
+    @IBOutlet weak var buttonSignIn: UIButton!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var phoneNumberTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buttonSignup.addBorder()
+        buttonSignIn.addBorder()
         // Do any additional setup after loading the view.
     }
     

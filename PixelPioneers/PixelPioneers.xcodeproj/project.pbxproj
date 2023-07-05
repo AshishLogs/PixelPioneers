@@ -20,6 +20,11 @@
 		85FD2A512A55641C00013212 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4D2A55641C00013212 /* SignUpViewController.swift */; };
 		85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */; };
 		85FD2A532A55641C00013212 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4F2A55641C00013212 /* Utility.swift */; };
+		85FD2A552A55A6FC00013212 /* Journey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FD2A542A55A6FC00013212 /* Journey.storyboard */; };
+		85FD2A572A55AB6000013212 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A562A55AB6000013212 /* Extensions.swift */; };
+		85FD2A592A55AD3C00013212 /* SavedPaymentModesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A582A55AD3C00013212 /* SavedPaymentModesVC.swift */; };
+		85FD2A5D2A55ADCF00013212 /* SavedPaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A5B2A55ADCF00013212 /* SavedPaymentCell.swift */; };
+		85FD2A5E2A55ADCF00013212 /* SavedPaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FD2A5C2A55ADCF00013212 /* SavedPaymentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		85FD2A4D2A55641C00013212 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCPageViewController.swift; sourceTree = "<group>"; };
 		85FD2A4F2A55641C00013212 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		85FD2A542A55A6FC00013212 /* Journey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journey.storyboard; sourceTree = "<group>"; };
+		85FD2A562A55AB6000013212 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		85FD2A582A55AD3C00013212 /* SavedPaymentModesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPaymentModesVC.swift; sourceTree = "<group>"; };
+		85FD2A5B2A55ADCF00013212 /* SavedPaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPaymentCell.swift; sourceTree = "<group>"; };
+		85FD2A5C2A55ADCF00013212 /* SavedPaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedPaymentCell.xib; sourceTree = "<group>"; };
 		B18905D4B1A7AC1E1657B87F /* Pods_PixelPioneers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelPioneers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F401D6C4AFE89ED4F6DBDB8D /* Pods-PixelPioneers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelPioneers.release.xcconfig"; path = "Target Support Files/Pods-PixelPioneers/Pods-PixelPioneers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +85,7 @@
 		60E9652E2A5562E600014C7F /* PixelPioneers */ = {
 			isa = PBXGroup;
 			children = (
+				85FD2A5A2A55ADA000013212 /* Cells */,
 				85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */,
 				85FD2A4C2A55641C00013212 /* SignInViewController.swift */,
 				85FD2A4D2A55641C00013212 /* SignUpViewController.swift */,
@@ -88,8 +99,20 @@
 				60E965382A5562E800014C7F /* Assets.xcassets */,
 				60E9653A2A5562E800014C7F /* LaunchScreen.storyboard */,
 				60E9653D2A5562E800014C7F /* Info.plist */,
+				85FD2A542A55A6FC00013212 /* Journey.storyboard */,
+				85FD2A562A55AB6000013212 /* Extensions.swift */,
+				85FD2A582A55AD3C00013212 /* SavedPaymentModesVC.swift */,
 			);
 			path = PixelPioneers;
+			sourceTree = "<group>";
+		};
+		85FD2A5A2A55ADA000013212 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				85FD2A5B2A55ADCF00013212 /* SavedPaymentCell.swift */,
+				85FD2A5C2A55ADCF00013212 /* SavedPaymentCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DFA7B36BC354F1AADF11D5F7 /* Frameworks */ = {
@@ -169,7 +192,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FD2A5E2A55ADCF00013212 /* SavedPaymentCell.xib in Resources */,
 				60E9653C2A5562E800014C7F /* LaunchScreen.storyboard in Resources */,
+				85FD2A552A55A6FC00013212 /* Journey.storyboard in Resources */,
 				60E965392A5562E800014C7F /* Assets.xcassets in Resources */,
 				60E965372A5562E600014C7F /* Main.storyboard in Resources */,
 			);
@@ -229,10 +254,13 @@
 				85FD2A502A55641C00013212 /* SignInViewController.swift in Sources */,
 				60E965342A5562E600014C7F /* ViewController.swift in Sources */,
 				60E965452A556A5B00014C7F /* APIClient.swift in Sources */,
+				85FD2A572A55AB6000013212 /* Extensions.swift in Sources */,
+				85FD2A5D2A55ADCF00013212 /* SavedPaymentCell.swift in Sources */,
 				60E965302A5562E600014C7F /* AppDelegate.swift in Sources */,
 				85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */,
 				60E965322A5562E600014C7F /* SceneDelegate.swift in Sources */,
 				85FD2A512A55641C00013212 /* SignUpViewController.swift in Sources */,
+				85FD2A592A55AD3C00013212 /* SavedPaymentModesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
