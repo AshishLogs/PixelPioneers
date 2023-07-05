@@ -15,7 +15,15 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signUpAction(_ sender: UIButton) {
+        if let registerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? SignUpViewController {
+            present(registerVC, animated: true)
+        }
+    }
+    
+    @IBAction func signInAction(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
