@@ -42,8 +42,7 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = selectedImage
             if let imageData = Utility.convertImageToBase64(image: selectedImage){
-                print(imageData)
-                // Send data to API
+                
             }
         }
     }
