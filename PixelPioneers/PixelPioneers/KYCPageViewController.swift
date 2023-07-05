@@ -128,6 +128,16 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
                         self.userNameLabel.text = [model.FirstName, model.LastName].compactMap({$0}).joined(separator: " ")
                         self.userAdharLabel.text = model.DocumentNumber
                         self.setupViewPostUpload()
+                        
+                        DispatchQueue.main.async {
+                            if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+                                scanner.titleImage = selectedImage
+                                scanner.models = model.list
+                                scanner.titleName = "Aadhar Card"
+                                self.navigationController?.pushViewController(scanner, animated: true)
+                            }
+                        }
+                        
                     case .failure(let failure):
                         print(failure)
                     }

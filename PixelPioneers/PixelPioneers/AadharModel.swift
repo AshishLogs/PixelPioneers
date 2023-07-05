@@ -13,6 +13,14 @@ struct AadharModel: Codable {
     let DocumentNumber: String?
     let FirstName: String?
     let LastName: String?
+    
+    var list : [OCRValues] {
+        return [OCRValues(key: "First Name", value: self.FirstName),
+                OCRValues(key: "Last Name", value: self.LastName),
+                OCRValues(key: "Document Number", value: self.DocumentNumber),
+                OCRValues(key: "Date Of Birth", value: self.DateOfBirth)]
+    }
+    
 }
 
 enum UploadAadharRouter {
