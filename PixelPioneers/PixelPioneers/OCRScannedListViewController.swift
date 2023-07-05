@@ -23,6 +23,8 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.navigationItem.title = titleName ?? "OCR"
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func registerTableViewCells() {
@@ -33,17 +35,21 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
-        imageView.contentMode = .scaleAspectFit
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 150))
+        headerView.backgroundColor = .white
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: headerView.frame.width, height: headerView.frame.height))
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.image = titleImage
-        return titleImage == nil ? nil : imageView
+        headerView.addSubview(imageView)
+        return titleImage == nil ? nil : headerView
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if titleImage == nil {
             return 0
         }
-        return 100
+        return 150
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,5 +69,19 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        // Extract the keyboard frame from the notification
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            // Adjust the content inset of the table view to make the cell visible above the keyboard
+            tableView.contentInset.bottom = keyboardFrame.size.height
+        }
+    }
+
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        // Reset the content inset of the table view when the keyboard is hidden
+        tableView.contentInset = .zero
+    }
+
     
 }
