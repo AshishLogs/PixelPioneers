@@ -83,6 +83,7 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
                     switch result {
                     case .success(let success):
                         print(success.toDictionary())
+                        print(String.init(data: success, encoding: .utf8))
                     case .failure(let failure):
                         print(failure)
                     }

@@ -50,7 +50,7 @@ extension UploadRouter : APIRouter {
     var parameters: Alamofire.Parameters? {
         switch self {
         case .upload(let image):
-            return ["docType":"kycIdDocument", "base64Data": image]
+            return ["docType":"creditCard", "base64Data": image]
         }
     }
     
