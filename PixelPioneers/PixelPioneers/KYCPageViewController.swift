@@ -47,7 +47,9 @@ class KYCPageViewController: UIViewController {
     }
     
     @IBAction func actionValidate(_ sender: UIButton) {
-        
+        if let registerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? KYCPageViewController {
+            self.navigationController?.pushViewController(registerVC, animated: true)
+        }
     }
     
     @IBAction func actionInvalidate(_ sender: UIButton) {
@@ -119,13 +121,13 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = selectedImage
             changeUploadImageTitle()
-            setupViewPostUpload()
             if let imageData = Utility.convertImageToBase64(image: selectedImage){
-                APIClient.uploadImage(base64Image: imageData) { result in
+                APIClient.uploadAadharImage(base64Image: imageData) { result in
                     switch result {
-                    case .success(let success):
-                        print(success.toDictionary())
-                        print(String.init(data: success, encoding: .utf8))
+                    case .success(let model):
+                        self.userNameLabel.text = [model.FirstName, model.LastName].compactMap({$0}).joined(separator: " ")
+                        self.userAdharLabel.text = model.DocumentNumber
+                        self.setupViewPostUpload()
                     case .failure(let failure):
                         print(failure)
                     }

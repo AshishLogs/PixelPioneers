@@ -10,52 +10,38 @@ import Foundation
 import Alamofire
 class APIClient {
     @discardableResult
-    private static func performRequest(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<Data, Error>)->Void) -> DataRequest {
-        return AF.request(route).responseData { response in
-            switch response.result {
-            case .success(let data):
-                completion(.success(data))
-            case .failure(let error):
-                completion(.failure(error))
-            }
+    private static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
+        return AF.request(route).validate(statusCode: 200..<410)
+            .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
+                switch response.result {
+                case .success(let model):
+                    print(String.init(data: response.data!, encoding: .utf8))
+                case .failure(let error):
+                    print(error)
+                }
+                completion(response.result)
         }
     }
+
     
-    static func uploadImage(base64Image: String,completion:@escaping (Result<Data, Error>)->Void){
+    static func uploadAadharImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void) {
         do {
-            let uploadRouter = try UploadRouter.upload(image: base64Image).asURLRequest()
+            let uploadRouter = try UploadAadharRouter.upload(image: base64Image).asURLRequest()
             performRequest(route: uploadRouter, completion:completion)
         }
-        catch (let error){
-            completion(.failure(error))
+        catch (_){
+            completion(.failure(AFError.explicitlyCancelled))
         }
     }
     
-}
-
-struct  UploadResponse : Codable {
-    
-}
-
-enum UploadRouter {
-    case upload(image: String)
-}
-
-extension UploadRouter : APIRouter {
-    
-    var path: String {
-        return "/uhi/webhook/postorder/analyseDoc"
-    }
-    
-    var parameters: Alamofire.Parameters? {
-        switch self {
-        case .upload(let image):
-            return ["docType":"creditCard", "base64Data": image]
+    static func uploadCreditCardImage(base64Image: String,completion:@escaping (AFResult<CreditCardModel>)->Void){
+        do {
+            let uploadRouter = try UploadCreditCardRouter.upload(image: base64Image).asURLRequest()
+            performRequest(route: uploadRouter, completion:completion)
         }
-    }
-    
-    var httpMethod: HTTPMethod {
-        return .post
+        catch (_){
+            completion(.failure(AFError.explicitlyCancelled))
+        }
     }
     
 }

@@ -16,6 +16,9 @@
 		60E9653C2A5562E800014C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E9653A2A5562E800014C7F /* LaunchScreen.storyboard */; };
 		60E965452A556A5B00014C7F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E965432A556A5A00014C7F /* APIClient.swift */; };
 		60E965462A556A5B00014C7F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E965442A556A5B00014C7F /* APIRouter.swift */; };
+		60E965482A55C78F00014C7F /* CreditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E965472A55C78F00014C7F /* CreditCardModel.swift */; };
+		60E9654A2A55C7CB00014C7F /* AadharModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E965492A55C7CB00014C7F /* AadharModel.swift */; };
+		60E9654C2A55D30F00014C7F /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9654B2A55D30F00014C7F /* ScannerViewController.swift */; };
 		85FD2A502A55641C00013212 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4C2A55641C00013212 /* SignInViewController.swift */; };
 		85FD2A512A55641C00013212 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4D2A55641C00013212 /* SignUpViewController.swift */; };
 		85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */; };
@@ -39,6 +42,9 @@
 		60E9653D2A5562E800014C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E965432A556A5A00014C7F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		60E965442A556A5B00014C7F /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		60E965472A55C78F00014C7F /* CreditCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModel.swift; sourceTree = "<group>"; };
+		60E965492A55C7CB00014C7F /* AadharModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AadharModel.swift; sourceTree = "<group>"; };
+		60E9654B2A55D30F00014C7F /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		85FD2A4C2A55641C00013212 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		85FD2A4D2A55641C00013212 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCPageViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				85FD2A542A55A6FC00013212 /* Journey.storyboard */,
 				85FD2A562A55AB6000013212 /* Extensions.swift */,
 				85FD2A582A55AD3C00013212 /* SavedPaymentModesVC.swift */,
+				60E965472A55C78F00014C7F /* CreditCardModel.swift */,
+				60E965492A55C7CB00014C7F /* AadharModel.swift */,
+				60E9654B2A55D30F00014C7F /* ScannerViewController.swift */,
 			);
 			path = PixelPioneers;
 			sourceTree = "<group>";
@@ -253,13 +262,16 @@
 				60E965462A556A5B00014C7F /* APIRouter.swift in Sources */,
 				85FD2A502A55641C00013212 /* SignInViewController.swift in Sources */,
 				60E965342A5562E600014C7F /* ViewController.swift in Sources */,
+				60E965482A55C78F00014C7F /* CreditCardModel.swift in Sources */,
 				60E965452A556A5B00014C7F /* APIClient.swift in Sources */,
 				85FD2A572A55AB6000013212 /* Extensions.swift in Sources */,
 				85FD2A5D2A55ADCF00013212 /* SavedPaymentCell.swift in Sources */,
+				60E9654A2A55C7CB00014C7F /* AadharModel.swift in Sources */,
 				60E965302A5562E600014C7F /* AppDelegate.swift in Sources */,
 				85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */,
 				60E965322A5562E600014C7F /* SceneDelegate.swift in Sources */,
 				85FD2A512A55641C00013212 /* SignUpViewController.swift in Sources */,
+				60E9654C2A55D30F00014C7F /* ScannerViewController.swift in Sources */,
 				85FD2A592A55AD3C00013212 /* SavedPaymentModesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

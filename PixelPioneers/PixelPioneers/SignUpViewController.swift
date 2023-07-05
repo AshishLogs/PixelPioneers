@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController {
     @IBAction func signInAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
     /*
     // MARK: - Navigation
 
