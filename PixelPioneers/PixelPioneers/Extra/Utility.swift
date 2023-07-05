@@ -56,7 +56,13 @@ public class Utility {
 
        return newImage
    }
-
-
     
+}
+
+public enum DocumentType : String  {
+    case medical = "Read Medical Document"
+    case invoice = "Read Invoice"
+    case card    = "Read Credit/Debit Card"
+    case electricity = "Read Electricity Bill"
+    case adhar   = "Aadhar KYC"
 }

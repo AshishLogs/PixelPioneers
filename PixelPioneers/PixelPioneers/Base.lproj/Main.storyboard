@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dxw-NM-rBF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dxw-NM-rBF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -123,18 +122,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDx-0o-QSJ">
-                                <rect key="frame" x="146.66666666666666" y="342" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="DXy-o9-2kY"/>
-                                    <constraint firstAttribute="width" constant="100" id="hhY-Up-OEc"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Upload Aadhar"/>
-                                <connections>
-                                    <action selector="uploadImageAction:" destination="BY6-jU-j75" eventType="touchUpInside" id="i3z-4W-Ghb"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aadhar" translatesAutoresizingMaskIntoConstraints="NO" id="7Hv-4S-Vvf">
                                 <rect key="frame" x="71.666666666666686" y="167" width="250" height="145"/>
                                 <constraints>
@@ -142,86 +129,45 @@
                                     <constraint firstAttribute="width" constant="250" id="gI8-qb-Z06"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please validate Name and Aadhar Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxl-Uu-SrQ">
-                                <rect key="frame" x="40" y="412" width="313" height="40.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIF-gC-LzO">
-                                <rect key="frame" x="40" y="472.66666666666669" width="313" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUx-cU-qVb">
-                                <rect key="frame" x="40" y="512.66666666666663" width="313" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="OLi-mi-3uq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fi3-jd-YOh">
-                                <rect key="frame" x="40" y="718" width="313" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A1E-CW-OXE">
+                                <rect key="frame" x="40" y="342" width="313" height="34.333333333333314"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KY-PA-qeU">
-                                        <rect key="frame" x="0.0" y="0.0" width="146.66666666666666" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDx-0o-QSJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Validate"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Upload Aadhar"/>
                                         <connections>
-                                            <action selector="actionValidate:" destination="BY6-jU-j75" eventType="touchUpInside" id="tsa-zP-GAN"/>
+                                            <action selector="uploadImageAction:" destination="BY6-jU-j75" eventType="touchUpInside" id="i3z-4W-Ghb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc1-hY-zeb">
-                                        <rect key="frame" x="166.66666666666663" y="0.0" width="146.33333333333337" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-YU-fn0">
+                                        <rect key="frame" x="161.66666666666663" y="0.0" width="151.33333333333337" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Invalidate"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Skip To Home"/>
                                         <connections>
-                                            <action selector="actionInvalidate:" destination="BY6-jU-j75" eventType="touchUpInside" id="fR5-L2-aSJ"/>
+                                            <action selector="skipToHomeAction:" destination="BY6-jU-j75" eventType="touchUpInside" id="fw5-dA-DdL"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MKg-CJ-mZB"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kl5-WB-ac8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fi3-jd-YOh" firstAttribute="leading" secondItem="kl5-WB-ac8" secondAttribute="leading" constant="40" id="0k9-la-feo"/>
-                            <constraint firstItem="kl5-WB-ac8" firstAttribute="trailing" secondItem="TUx-cU-qVb" secondAttribute="trailing" constant="40" id="3wu-Ij-WgL"/>
-                            <constraint firstItem="kl5-WB-ac8" firstAttribute="trailing" secondItem="FIF-gC-LzO" secondAttribute="trailing" constant="40" id="CH6-1A-sG4"/>
                             <constraint firstItem="7Hv-4S-Vvf" firstAttribute="top" secondItem="VID-ui-w1Q" secondAttribute="bottom" constant="28" id="GSO-Nw-nIf"/>
                             <constraint firstItem="7Hv-4S-Vvf" firstAttribute="centerX" secondItem="fjG-6t-wWi" secondAttribute="centerX" id="Jfb-5G-Bxi"/>
-                            <constraint firstItem="KDx-0o-QSJ" firstAttribute="centerX" secondItem="fjG-6t-wWi" secondAttribute="centerX" id="QQj-5h-Shr"/>
-                            <constraint firstItem="Qxl-Uu-SrQ" firstAttribute="leading" secondItem="kl5-WB-ac8" secondAttribute="leading" constant="40" id="T57-Ff-Bxm"/>
-                            <constraint firstItem="kl5-WB-ac8" firstAttribute="bottom" secondItem="fi3-jd-YOh" secondAttribute="bottom" constant="50" id="beh-mK-9RR"/>
                             <constraint firstItem="kl5-WB-ac8" firstAttribute="trailing" secondItem="VID-ui-w1Q" secondAttribute="trailing" constant="16" id="eor-hh-YR4"/>
-                            <constraint firstItem="TUx-cU-qVb" firstAttribute="top" secondItem="FIF-gC-LzO" secondAttribute="bottom" constant="40" id="ew8-I2-4Bu"/>
-                            <constraint firstItem="FIF-gC-LzO" firstAttribute="leading" secondItem="kl5-WB-ac8" secondAttribute="leading" constant="40" id="jl7-3X-dzr"/>
-                            <constraint firstItem="TUx-cU-qVb" firstAttribute="leading" secondItem="kl5-WB-ac8" secondAttribute="leading" constant="40" id="kNk-RH-1kI"/>
-                            <constraint firstItem="kl5-WB-ac8" firstAttribute="trailing" secondItem="fi3-jd-YOh" secondAttribute="trailing" constant="40" id="kvN-G4-UsJ"/>
-                            <constraint firstItem="fi3-jd-YOh" firstAttribute="centerX" secondItem="fjG-6t-wWi" secondAttribute="centerX" id="lhv-je-Eh9"/>
-                            <constraint firstItem="Qxl-Uu-SrQ" firstAttribute="top" secondItem="KDx-0o-QSJ" secondAttribute="bottom" constant="30" id="n3Z-5E-3zA"/>
                             <constraint firstItem="VID-ui-w1Q" firstAttribute="leading" secondItem="kl5-WB-ac8" secondAttribute="leading" constant="16" id="nH5-51-DDo"/>
-                            <constraint firstItem="KDx-0o-QSJ" firstAttribute="top" secondItem="7Hv-4S-Vvf" secondAttribute="bottom" constant="30" id="obH-nY-dFj"/>
-                            <constraint firstItem="kl5-WB-ac8" firstAttribute="trailing" secondItem="Qxl-Uu-SrQ" secondAttribute="trailing" constant="40" id="pLP-aW-6mh"/>
-                            <constraint firstItem="FIF-gC-LzO" firstAttribute="top" secondItem="Qxl-Uu-SrQ" secondAttribute="bottom" constant="20" id="yUs-wC-Yhx"/>
+                            <constraint firstItem="A1E-CW-OXE" firstAttribute="leading" secondItem="kl5-WB-ac8" secondAttribute="leading" constant="40" id="naj-NR-mqw"/>
+                            <constraint firstItem="A1E-CW-OXE" firstAttribute="top" secondItem="7Hv-4S-Vvf" secondAttribute="bottom" constant="30" id="yQE-wE-gxg"/>
+                            <constraint firstItem="kl5-WB-ac8" firstAttribute="trailing" secondItem="A1E-CW-OXE" secondAttribute="trailing" constant="40" id="zJU-En-MZH"/>
                             <constraint firstItem="VID-ui-w1Q" firstAttribute="top" secondItem="kl5-WB-ac8" secondAttribute="top" constant="30" id="zfe-cr-5PF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonActionViews" destination="fi3-jd-YOh" id="onS-P1-X4I"/>
-                        <outlet property="buttonInvalidate" destination="Sc1-hY-zeb" id="zj7-Hl-h9y"/>
-                        <outlet property="buttonValidate" destination="6KY-PA-qeU" id="Job-RI-sOu"/>
+                        <outlet property="buttonSkip" destination="Jhf-YU-fn0" id="qTV-Pz-P9p"/>
                         <outlet property="imageUploadButton" destination="KDx-0o-QSJ" id="Deh-q4-Ucq"/>
                         <outlet property="imageView" destination="7Hv-4S-Vvf" id="kYZ-Vp-mW4"/>
-                        <outlet property="userAdharLabel" destination="TUx-cU-qVb" id="1kQ-Zc-DN7"/>
-                        <outlet property="userMessageLabel" destination="Qxl-Uu-SrQ" id="bH5-JD-tJe"/>
-                        <outlet property="userNameLabel" destination="FIF-gC-LzO" id="Cqx-cP-v6U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFb-aI-a7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
