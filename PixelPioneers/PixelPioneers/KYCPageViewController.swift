@@ -19,10 +19,46 @@ class KYCPageViewController: UIViewController {
     }
     
     @IBAction func uploadImageAction(_ sender: UIButton) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true)
+        
+        let photoLibraryAction = UIAlertAction(title: "Choose From Library", style: .default) { [weak self] _ in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .photoLibrary
+            imagePickerController.modalPresentationStyle = .overFullScreen
+            self?.present(imagePickerController, animated: true)
+        }
+
+        let cameraAction = UIAlertAction(title: "Take From Camera", style: .default) { [weak self] _ in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .camera
+            imagePickerController.modalPresentationStyle = .overFullScreen
+            self?.present(imagePickerController, animated: true)
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        showAlert(
+          style: .actionSheet,
+          title: "Choose Your Image",
+          message: nil,
+          actions: [photoLibraryAction, cameraAction, cancelAction],
+          completion: nil)
     }
+    
+    func showAlert(
+      style: UIAlertController.Style,
+      title: String?,
+      message: String?,
+      actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .cancel, handler: nil)],
+      completion: (() -> Swift.Void)? = nil)
+    {
+      let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+      for action in actions {
+        alert.addAction(action)
+      }
+        self.present(alert, animated: true, completion: completion)
+    }
+
     
     /*
     // MARK: - Navigation
@@ -46,7 +82,7 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
                 APIClient.uploadImage(base64Image: imageData) { result in
                     switch result {
                     case .success(let success):
-                        print(success)
+                        print(success.toDictionary())
                     case .failure(let failure):
                         print(failure)
                     }

@@ -10,33 +10,24 @@ import Foundation
 import Alamofire
 class APIClient {
     @discardableResult
-    private static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
-        return AF.request(route).validate(statusCode: 200..<410)
-            .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
-                switch response.result {
-                case .success(let responsess):
-                    if let d = response.data {
-                        do {
-                            let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String : Any]
-                            print(json)
-                        } catch {
-                            print("errorMsg")
-                        }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-                completion(response.result)
+    private static func performRequest(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<Data, Error>)->Void) -> DataRequest {
+        return AF.request(route).responseData { response in
+            switch response.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
     
-    static func uploadImage(base64Image: String,completion:@escaping (AFResult<UploadResponse>)->Void){
+    static func uploadImage(base64Image: String,completion:@escaping (Result<Data, Error>)->Void){
         do {
-            let homeRouter = try UploadRouter.upload(image: base64Image).asURLRequest()
-            performRequest(route: homeRouter, completion:completion )
+            let uploadRouter = try UploadRouter.upload(image: base64Image).asURLRequest()
+            performRequest(route: uploadRouter, completion:completion)
         }
         catch (let error){
-            print(error)
+            completion(.failure(error))
         }
     }
     
@@ -67,4 +58,17 @@ extension UploadRouter : APIRouter {
         return .post
     }
     
+}
+
+extension Data {
+    func toDictionary() -> [String: Any]? {
+        do {
+            if let dictionary = try JSONSerialization.jsonObject(with: self, options: .mutableContainers) as? [String: Any] {
+                return dictionary
+            }
+        } catch {
+            print("Error converting data to dictionary: \(error)")
+        }
+        return nil
+    }
 }
