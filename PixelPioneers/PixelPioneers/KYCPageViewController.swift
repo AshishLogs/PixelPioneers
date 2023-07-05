@@ -39,10 +39,18 @@ class KYCPageViewController: UIViewController {
 extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = selectedImage
             if let imageData = Utility.convertImageToBase64(image: selectedImage){
-                
+                APIClient.uploadImage(base64Image: imageData) { result in
+                    switch result {
+                    case .success(let success):
+                        print(success)
+                    case .failure(let failure):
+                        print(failure)
+                    }
+                }
             }
         }
     }

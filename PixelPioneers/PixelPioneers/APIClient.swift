@@ -22,16 +22,41 @@ class APIClient {
                 completion(response.result)
         }
     }
-//    static func getHomeData(completion:@escaping (AFResult<HomeResponse>)->Void){
-//        do {
-//            let homeRouter = try HomeRouter.home.asURLRequest()
-//            performRequest(route: homeRouter, completion:completion )
-//
-//        }
-//        catch (let error){
-//            print(error)
-//        }
-//    }
+    
+    static func uploadImage(base64Image: String,completion:@escaping (AFResult<UploadResponse>)->Void){
+        do {
+            let homeRouter = try UploadRouter.upload(image: base64Image).asURLRequest()
+            performRequest(route: homeRouter, completion:completion )
+        }
+        catch (let error){
+            print(error)
+        }
+    }
     
 }
 
+struct  UploadResponse : Codable {
+}
+
+enum UploadRouter {
+    case upload(image: String)
+}
+
+extension UploadRouter : APIRouter {
+    
+    var path: String {
+        return "/uhi/webhook/postorder/analyseDoc"
+    }
+    
+    var parameters: Alamofire.Parameters? {
+        switch self {
+        case .upload(let image):
+            return ["docType":"kycIdDocument", "base64Data": image]
+        }
+    }
+    
+    var httpMethod: HTTPMethod {
+        return .post
+    }
+    
+}
