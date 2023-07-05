@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        if let registerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? SignUpViewController {
+        if let registerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? KYCPageViewController {
             present(registerVC, animated: true)
         }
     }
