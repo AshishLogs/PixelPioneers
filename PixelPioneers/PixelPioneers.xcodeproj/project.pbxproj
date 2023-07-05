@@ -95,10 +95,8 @@
 		60E9652E2A5562E600014C7F /* PixelPioneers */ = {
 			isa = PBXGroup;
 			children = (
+				85FD2A672A55F54300013212 /* VC */,
 				85FD2A5A2A55ADA000013212 /* Cells */,
-				85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */,
-				85FD2A4C2A55641C00013212 /* SignInViewController.swift */,
-				85FD2A4D2A55641C00013212 /* SignUpViewController.swift */,
 				85FD2A4F2A55641C00013212 /* Utility.swift */,
 				60E9652F2A5562E600014C7F /* AppDelegate.swift */,
 				60E965312A5562E600014C7F /* SceneDelegate.swift */,
@@ -111,10 +109,8 @@
 				60E9653D2A5562E800014C7F /* Info.plist */,
 				85FD2A542A55A6FC00013212 /* Journey.storyboard */,
 				85FD2A562A55AB6000013212 /* Extensions.swift */,
-				85FD2A582A55AD3C00013212 /* SavedPaymentModesVC.swift */,
 				60E965472A55C78F00014C7F /* CreditCardModel.swift */,
 				60E965492A55C7CB00014C7F /* AadharModel.swift */,
-				60E9654B2A55D30F00014C7F /* OCRScannedListViewController.swift */,
 			);
 			path = PixelPioneers;
 			sourceTree = "<group>";
@@ -128,6 +124,18 @@
 				60E9654E2A55E9AC00014C7F /* OCRScannedListTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		85FD2A672A55F54300013212 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */,
+				85FD2A4C2A55641C00013212 /* SignInViewController.swift */,
+				85FD2A4D2A55641C00013212 /* SignUpViewController.swift */,
+				85FD2A582A55AD3C00013212 /* SavedPaymentModesVC.swift */,
+				60E9654B2A55D30F00014C7F /* OCRScannedListViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		DFA7B36BC354F1AADF11D5F7 /* Frameworks */ = {
