@@ -11,7 +11,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="u0c-Uu-hTz">
             <objects>
-                <viewController id="0DE-9j-FeX" customClass="SignInViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0DE-9j-FeX" customClass="SignInViewController" customModule="PixelPioneers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wIY-Ed-Ibl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="ptC-4s-JaL">
             <objects>
-                <viewController id="w60-fh-LBJ" customClass="SignUpViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w60-fh-LBJ" customClass="SignUpViewController" customModule="PixelPioneers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lir-yQ-DDW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,11 +160,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="131.66666666666666" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpAction:" destination="w60-fh-LBJ" eventType="touchUpInside" id="6Nf-nC-jQy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y0-XD-GSv">
                                         <rect key="frame" x="171.66666666666663" y="0.0" width="131.33333333333337" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
+                                        <connections>
+                                            <action selector="signInAction:" destination="w60-fh-LBJ" eventType="touchUpInside" id="sga-O5-wmJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -193,7 +199,7 @@
         <!--Page View Controller-->
         <scene sceneID="0S5-EO-CaX">
             <objects>
-                <viewController id="BY6-jU-j75" customClass="KYCPageViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KYCPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BY6-jU-j75" customClass="KYCPageViewController" customModule="PixelPioneers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fjG-6t-wWi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

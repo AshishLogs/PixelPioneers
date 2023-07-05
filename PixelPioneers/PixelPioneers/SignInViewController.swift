@@ -23,7 +23,9 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        
+        if let registerVC = UIStoryboard.init(name: "main", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController {
+            present(registerVC, animated: true)
+        }
     }
     
     /*
