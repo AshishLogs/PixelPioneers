@@ -14,8 +14,15 @@ class APIClient {
         return AF.request(route).validate(statusCode: 200..<410)
             .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
                 switch response.result {
-                case .success(let response):
-                    print("Response is successful = \(response) for url \(String(describing: route.urlRequest?.url!))")
+                case .success(let responsess):
+                    if let d = response.data {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String : Any]
+                            print(json)
+                        } catch {
+                            print("errorMsg")
+                        }
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -36,6 +43,7 @@ class APIClient {
 }
 
 struct  UploadResponse : Codable {
+    
 }
 
 enum UploadRouter {
