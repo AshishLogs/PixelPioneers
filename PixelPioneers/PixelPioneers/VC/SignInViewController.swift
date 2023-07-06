@@ -9,17 +9,34 @@ import UIKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var countryCodeTF: UITextField!
     @IBOutlet weak var buttonSignIn: UIButton!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var phoneNumberTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        // Do any additional setup after loading the view.
+    }
+    
+    func setupUI() {
         buttonSignIn.addBorder()
         passwordTF.delegate = self
         phoneNumberTF.delegate = self
         phoneNumberTF.text = "9988765643"
         passwordTF.text = "PixelPioneers"
-        // Do any additional setup after loading the view.
+        passwordTF.backgroundColor = UIColor.gray
+        phoneNumberTF.backgroundColor = UIColor.gray
+        passwordTF.textColor = .white
+        phoneNumberTF.textColor = .white
+        countryCodeTF.backgroundColor = UIColor.gray
+        countryCodeTF.textColor = .white
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 5.0
+        self.view.backgroundColor = UIColor.init(hex: "252525")
+        buttonSignIn.layer.cornerRadius = 10.0
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func signInAction(_ sender: UIButton) {

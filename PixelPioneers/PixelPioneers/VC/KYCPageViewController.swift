@@ -10,15 +10,16 @@ import AVFoundation
 
 class KYCPageViewController: UIViewController {
 
+    @IBOutlet weak var userMessageLabel: UILabel!
     var isFirstLaunch : Bool = true
-    @IBOutlet weak var buttonSkip: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageUploadButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonSkip.isHidden = !isFirstLaunch
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-
+        imageUploadButton.layer.cornerRadius = 10.0
+        self.view.backgroundColor = UIColor.init(hex: "252525")
+        userMessageLabel.textColor = UIColor.white
         // Do any additional setup after loading the view.
     }
     
@@ -54,15 +55,6 @@ class KYCPageViewController: UIViewController {
           completion: nil)
     }
     
-
-
-    
-    @IBAction func skipToHomeAction(_ sender: UIButton) {
-        if let landingVC = UIStoryboard.init(name: "Journey", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? LandingVC {
-            let nav = UINavigationController.init(rootViewController: landingVC)
-            UIApplication.shared.windows.first?.rootViewController = nav
-        }
-    }
     /*
     // MARK: - Navigation
 
