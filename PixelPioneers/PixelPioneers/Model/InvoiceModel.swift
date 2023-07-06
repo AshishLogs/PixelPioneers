@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 
-struct InvoiceModel: Codable {
+struct InvoiceModel: Codable, BaseModel {
     let invoiceDate, invoiceID: String?
     let invoiceTotal: Int?
     let items: [Item]?
@@ -20,7 +20,7 @@ struct InvoiceModel: Codable {
     let totalDiscount: Int?
     let totalTax: String?
     let vendor: Vendor?
-
+    var data: Data?
     enum CodingKeys: String, CodingKey {
         case invoiceDate = "InvoiceDate"
         case invoiceID = "InvoiceId"

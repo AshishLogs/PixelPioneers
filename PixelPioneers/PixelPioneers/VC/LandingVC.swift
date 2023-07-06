@@ -28,7 +28,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        self.moveToListView(selectedImage, models: model.list, title: "Aadhar Card")
+                        self.moveToListView(selectedImage, models: model.list, title: "Aadhar Card", rawData: model.data)
                     }
                     
                 case .failure(let failure):
@@ -40,7 +40,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        self.moveToListView(selectedImage, models: model.list, title: "Credit Card")
+                        self.moveToListView(selectedImage, models: model.list, title: "Credit Card", rawData: model.data)
                     }
                     
                 case .failure(let failure):
@@ -53,7 +53,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        self.moveToListView(selectedImage, models: model.list, title: "Electricity Bill")
+                        self.moveToListView(selectedImage, models: model.list, title: "Electricity Bill", rawData: model.data)
                     }
                     
                 case .failure(let failure):
@@ -65,7 +65,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        self.moveToListView(selectedImage, models: model.list, title: "Invoice")
+                        self.moveToListView(selectedImage, models: model.list, title: "Invoice", rawData: model.data)
                     }
                     
                 case .failure(let failure):
@@ -77,7 +77,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        self.moveToListView(selectedImage, models: model.list, title: "Health Document")
+                        self.moveToListView(selectedImage, models: model.list, title: "Health Document", rawData: model.data)
                     }
                 case .failure(let failure):
                     print(failure)

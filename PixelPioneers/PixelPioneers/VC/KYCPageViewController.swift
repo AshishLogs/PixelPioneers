@@ -84,7 +84,7 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
                     switch result {
                     case .success(let model):
                         DispatchQueue.main.async {
-                            self.moveToListView(selectedImage, models: model.list, title: "Aadhar Card")
+                            self.moveToListView(selectedImage, models: model.list, title: "Aadhar Card", rawData: model.data)
                         }
                         
                     case .failure(let failure):
@@ -101,19 +101,3 @@ extension KYCPageViewController : UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
-extension UIViewController {
-    
-    func moveToListView(_ selectedImage: UIImage, models: [OCRValues], title: String) {
-        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-            scanner.titleImage = selectedImage
-            scanner.models = models
-            scanner.titleName = title
-            if models.count > 0 {
-                self.navigationController?.pushViewController(scanner, animated: true)
-            } else {
-                self.showToast(message: "Something Went Wrong!!!")
-            }
-        }
-    }
-    
-}

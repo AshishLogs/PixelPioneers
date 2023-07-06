@@ -61,3 +61,22 @@ extension UIImage {
         }
     }
 }
+
+extension UIViewController {
+    
+    func moveToListView(_ selectedImage: UIImage, models: [OCRValues], title: String, rawData: Data?) {
+        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+            scanner.titleImage = selectedImage
+            scanner.models = models
+            scanner.titleName = title
+            scanner.rawData = rawData
+            if models.count > 0 {
+                self.navigationController?.pushViewController(scanner, animated: true)
+            } else {
+                self.showToast(message: "Something Went Wrong!!!")
+            }
+        }
+    }
+    
+}
+

@@ -8,12 +8,12 @@
 import UIKit
 import Alamofire
 
-struct CreditCardModel: Codable {
+struct CreditCardModel: Codable, BaseModel {
     let cardHolderName: CardHolderName?
     let cardNumber: CardNumber?
     let docType: String?
     let expDate: ExpirationDate?
-    
+    var data: Data?
     var list : [OCRValues] {
         return [OCRValues(key: "Card Holder Name", value: self.cardHolderName?.value),
                 OCRValues(key: "Card Number", value: self.cardNumber?.value),

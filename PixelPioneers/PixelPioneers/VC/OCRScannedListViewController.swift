@@ -17,14 +17,25 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
     
     var models : [OCRValues] = []
     
+    var rawData : Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.navigationItem.title = titleName ?? "OCR"
+        let rightBarButton = UIBarButtonItem(title: "Raw JSON", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        navigationItem.rightBarButtonItem = rightBarButton
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func rightBarButtonTapped() {
+        if let jsonReader = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RawJSONViewController") as? RawJSONViewController {
+            jsonReader.json = rawData
+            self.navigationController?.pushViewController(jsonReader, animated: true)
+        }
     }
     
     private func registerTableViewCells() {

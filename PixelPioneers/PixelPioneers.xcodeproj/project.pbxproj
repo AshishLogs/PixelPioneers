@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CDB66010810F33C789633A5 /* Pods_PixelPioneers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18905D4B1A7AC1E1657B87F /* Pods_PixelPioneers.framework */; };
+		60E4C59F2A56B7600009BB97 /* RawJSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4C59E2A56B7600009BB97 /* RawJSONViewController.swift */; };
 		60E965302A5562E600014C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9652F2A5562E600014C7F /* AppDelegate.swift */; };
 		60E965322A5562E600014C7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E965312A5562E600014C7F /* SceneDelegate.swift */; };
 		60E965342A5562E600014C7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E965332A5562E600014C7F /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3C627EBDCEE90B6EC481CE3A /* Pods-PixelPioneers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelPioneers.debug.xcconfig"; path = "Target Support Files/Pods-PixelPioneers/Pods-PixelPioneers.debug.xcconfig"; sourceTree = "<group>"; };
+		60E4C59E2A56B7600009BB97 /* RawJSONViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawJSONViewController.swift; sourceTree = "<group>"; };
 		60E9652C2A5562E600014C7F /* PixelPioneers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelPioneers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E9652F2A5562E600014C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E965312A5562E600014C7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				85FD2A4C2A55641C00013212 /* SignInViewController.swift */,
 				60E9654B2A55D30F00014C7F /* OCRScannedListViewController.swift */,
 				85FD2A682A55F7C800013212 /* LandingVC.swift */,
+				60E4C59E2A56B7600009BB97 /* RawJSONViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				60E9654A2A55C7CB00014C7F /* AadharModel.swift in Sources */,
 				60E965302A5562E600014C7F /* AppDelegate.swift in Sources */,
 				85FD2A762A5631C000013212 /* InvoiceModel.swift in Sources */,
+				60E4C59F2A56B7600009BB97 /* RawJSONViewController.swift in Sources */,
 				85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */,
 				60E965322A5562E600014C7F /* SceneDelegate.swift in Sources */,
 				85FD2A692A55F7C800013212 /* LandingVC.swift in Sources */,

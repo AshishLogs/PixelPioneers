@@ -8,12 +8,12 @@
 import UIKit
 import Alamofire
 
-struct AadharModel: Codable {
+struct AadharModel: Codable, BaseModel {
     let DateOfBirth: String?
     let DocumentNumber: String?
     let FirstName: String?
     let LastName: String?
-    
+    var data: Data?
     var list : [OCRValues] {
         return [OCRValues(key: "First Name", value: self.FirstName),
                 OCRValues(key: "Last Name", value: self.LastName),

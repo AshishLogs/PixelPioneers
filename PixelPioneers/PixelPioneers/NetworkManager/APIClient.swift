@@ -8,26 +8,41 @@
 
 import Foundation
 import Alamofire
+
+protocol BaseModel : Codable {
+    var data: Data? { get set }
+}
+
 class APIClient {
     
     static let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 
     @discardableResult
-    private static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
+    private static func performRequest<T:BaseModel>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
         if let v = UIApplication.shared.windows.first?.rootViewController {
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             loadingIndicator.hidesWhenStopped = true
-            loadingIndicator.style = UIActivityIndicatorView.Style.gray
+            loadingIndicator.style = UIActivityIndicatorView.Style.large
             loadingIndicator.startAnimating();
             alert.view.addSubview(loadingIndicator)
             v.present(alert, animated: true, completion: nil)
         }
         return AF.request(route).validate(statusCode: 200..<410)
-            .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
+               .responseData { response in
                 alert.dismiss(animated: true)
-                completion(response.result)
-            }.responseString { response in
-                print(response.result)
+                switch response.result {
+                case .success(let data):
+                    let decoder = JSONDecoder()
+                    do {
+                        var model = try decoder.decode(T.self, from: data)
+                        model.data = data
+                        completion(.success(model))
+                    } catch {
+                        completion(.failure(AFError.explicitlyCancelled))
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
     }
 

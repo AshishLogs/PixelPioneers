@@ -8,9 +8,9 @@
 import Foundation
 import Alamofire
 
-struct EBModel: Codable {
+struct EBModel: Codable, BaseModel {
     let amount, billingUnit, consumerID, state: String?
-
+    var data: Data?
     enum CodingKeys: String, CodingKey {
         case amount, billingUnit
         case consumerID = "consumerId"
@@ -37,7 +37,7 @@ extension ElectricityBillRouter : APIRouter {
     var parameters: Alamofire.Parameters? {
         switch self {
         case .upload(let image):
-            return ["docType":"eb", "base64Data": image]
+            return ["docType":"eb2", "base64Data": image]
         }
     }
     
