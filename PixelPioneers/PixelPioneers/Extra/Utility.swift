@@ -11,7 +11,7 @@ import UIKit
 
 public class Utility {
     class func convertImageToBase64(image : UIImage) -> String? {
-        if let resizeImage = resizeImage(image: image), let imgData = resizeImage.pngData()  {
+        if let imgData = Utility.resizeImage(image: image)?.pngData()  {
             let base64 = imgData.base64EncodedString()
             return base64
         }
@@ -22,7 +22,7 @@ public class Utility {
        
        let maxWidth: CGFloat = UIScreen.main.bounds.width
        let maxHeight: CGFloat = UIScreen.main.bounds.height
-       let maxSizeInBytes = 5 * 1024 * 1024
+       let maxSizeInBytes = 3 * 1024 * 1024
        
        var compression: CGFloat = 1.0
        let maxCompression: CGFloat = 0.1

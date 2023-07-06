@@ -30,6 +30,7 @@ class APIClient {
                 print(response.result)
             }
     }
+
     
     static func uploadAadharImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void) {
         do {
