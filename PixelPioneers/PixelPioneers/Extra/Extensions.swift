@@ -12,6 +12,7 @@ extension UIButton {
     func addBorder() {
         self.layer.cornerRadius = 5.0
         self.layer.borderWidth = 1.0
+        self.layer.masksToBounds = true
     }
 }
 

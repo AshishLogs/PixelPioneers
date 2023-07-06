@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,11 +24,8 @@
                             <constraint firstAttribute="height" constant="150" id="OgN-7H-N65"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aadhar KYC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-hN-LoJ">
-                        <rect key="frame" x="0.0" y="70" width="165" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="ACF-qM-7pJ"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aadhar KYC" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-hN-LoJ">
+                        <rect key="frame" x="0.0" y="60" width="165" height="90"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -37,12 +35,15 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="sj3-vq-s33" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2lX-zD-pSk"/>
+                <constraint firstAttribute="bottom" secondItem="J2G-hN-LoJ" secondAttribute="bottom" id="70W-CF-DBx"/>
                 <constraint firstAttribute="bottom" secondItem="sj3-vq-s33" secondAttribute="bottom" id="9JH-pM-AcA"/>
+                <constraint firstItem="sj3-vq-s33" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Hf2-e8-CYJ"/>
                 <constraint firstItem="J2G-hN-LoJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ihs-A4-3u1"/>
+                <constraint firstItem="J2G-hN-LoJ" firstAttribute="centerY" secondItem="sj3-vq-s33" secondAttribute="centerY" multiplier="1.4" id="JkB-O9-Acp"/>
                 <constraint firstItem="sj3-vq-s33" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OAi-q0-o3P"/>
+                <constraint firstItem="sj3-vq-s33" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="YjB-g0-IPd"/>
                 <constraint firstAttribute="trailing" secondItem="sj3-vq-s33" secondAttribute="trailing" id="dbc-PA-FQ6"/>
                 <constraint firstAttribute="trailing" secondItem="J2G-hN-LoJ" secondAttribute="trailing" id="hKD-bu-8Vg"/>
-                <constraint firstAttribute="bottom" secondItem="J2G-hN-LoJ" secondAttribute="bottom" constant="50" id="pDJ-xn-doS"/>
             </constraints>
             <size key="customSize" width="165" height="150"/>
             <connections>
