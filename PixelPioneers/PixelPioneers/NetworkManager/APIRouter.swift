@@ -2,7 +2,6 @@
 //  APIRouter.swift
 //  Jaarx
 //
-//  Created by Sumit Kumar on 14/06/20.
 //  Copyright © 2020 Sushant Alone. All rights reserved.
 //
 

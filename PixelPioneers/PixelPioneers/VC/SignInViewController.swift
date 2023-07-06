@@ -21,7 +21,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupUI() {
-        buttonSignIn.addBorder()
         passwordTF.delegate = self
         phoneNumberTF.delegate = self
         phoneNumberTF.text = "9988765643"
