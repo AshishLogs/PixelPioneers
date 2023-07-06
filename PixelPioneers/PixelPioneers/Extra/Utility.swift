@@ -36,7 +36,7 @@ public class Utility {
         
         // Adjust the parameters for the sharpening effect
         unsharpMaskFilter.setValue(3.0, forKey: kCIInputRadiusKey) // Radius of the sharpness
-        unsharpMaskFilter.setValue(1.5, forKey: kCIInputIntensityKey) // Intensity of the sharpness
+        unsharpMaskFilter.setValue(3.0, forKey: kCIInputIntensityKey) // Intensity of the sharpness
         
         // Get the output image from the filter
         guard let outputImage = unsharpMaskFilter.outputImage else {
