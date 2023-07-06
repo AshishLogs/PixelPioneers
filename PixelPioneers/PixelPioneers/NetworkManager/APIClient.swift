@@ -43,7 +43,9 @@ class APIClient {
                 case .failure(let error):
                     completion(.failure(error))
                 }
-            }
+               }.responseString { response in
+                   print(response.result)
+               }
     }
 
     
@@ -87,7 +89,7 @@ class APIClient {
         }
     }
     
-    static func uploadMedicalDocumentImage(base64Image: String,completion:@escaping (AFResult<InvoiceModel>)->Void){
+    static func uploadMedicalDocumentImage(base64Image: String,completion:@escaping (AFResult<MBModel>)->Void){
         do {
             let uploadRouter = try MedicalRouter.upload(image: base64Image).asURLRequest()
             performRequest(route: uploadRouter, completion:completion)
