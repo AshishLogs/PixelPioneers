@@ -30,7 +30,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         if let landingVC = UIStoryboard.init(name: "Journey", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? LandingVC {
             let nav = UINavigationController.init(rootViewController: landingVC)
-            UIApplication.shared.windows.first?.rootViewController = nav
+            nav.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(nav, animated: true)
         }
     }
     

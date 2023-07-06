@@ -163,8 +163,7 @@ extension LandingVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         }
         case .logout:
             if let signInVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInViewController") as? SignInViewController {
-                let nav = UINavigationController.init(rootViewController: signInVC)
-                UIApplication.shared.windows.first?.rootViewController = nav
+                self.dismiss(animated: true)
             }
         }
     }
