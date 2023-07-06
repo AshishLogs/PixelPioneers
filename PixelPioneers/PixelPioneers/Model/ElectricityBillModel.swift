@@ -21,7 +21,7 @@ struct EBModel: Codable {
         return [OCRValues.init(key: "EB Board", value: self.state),
                 OCRValues.init(key: "Consumer ID", value: self.consumerID),
                 OCRValues.init(key: "Amount", value: self.amount),
-                OCRValues.init(key: "Billing Unit", value: self.billingUnit)]
+                OCRValues.init(key: "Billing Unit", value: self.billingUnit)].filter({$0.value != nil && ($0.value ?? "").count > 0 })
     }
 
     

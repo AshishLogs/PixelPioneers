@@ -44,7 +44,7 @@ struct InvoiceModel: Codable {
                 OCRValues.init(key: "Shipping Info", value: self.shippingInfo?.shippingAddress),
                 OCRValues.init(key: "Total Discount", value: String.init(format: "%d", self.totalDiscount ?? 0.0)),
                 OCRValues.init(key: "Invoice Total", value: String.init(format: "%d", self.invoiceTotal ?? 0.0)),
-                OCRValues.init(key: "Sub Total", value: String.init(format: "%d", self.subTotal ?? 0.0))].filter({$0.value != nil })
+                OCRValues.init(key: "Sub Total", value: String.init(format: "%d", self.subTotal ?? 0.0))].filter({$0.value != nil && ($0.value ?? "").count > 0 })
     }
 }
 

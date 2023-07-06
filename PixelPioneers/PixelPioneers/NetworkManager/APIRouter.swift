@@ -27,7 +27,7 @@ extension APIRouter {
     }
     
     var path : String {
-        return "/uhi/webhook/postorder/analyseDoc"
+        return "/uhi/webhook/orders/analyseDoc"
     }
     
     var headers: HTTPHeaders? {
