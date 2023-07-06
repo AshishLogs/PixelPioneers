@@ -24,19 +24,12 @@ class APIClient {
         }
         return AF.request(route).validate(statusCode: 200..<410)
             .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
-                switch response.result {
-                case .success(let model):
-                    print(String(data: response.data!, encoding: .utf8))
-                case .failure(let error):
-                    print(error)
-                }
                 alert.dismiss(animated: true)
                 completion(response.result)
             }.responseString { response in
                 print(response.result)
             }
     }
-
     
     static func uploadAadharImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void) {
         do {
