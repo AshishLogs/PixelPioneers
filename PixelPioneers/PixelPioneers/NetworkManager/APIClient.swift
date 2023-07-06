@@ -9,18 +9,32 @@
 import Foundation
 import Alamofire
 class APIClient {
+    
+    static let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
     @discardableResult
     private static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
+        if let v = UIApplication.shared.windows.first?.rootViewController {
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.style = UIActivityIndicatorView.Style.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            v.present(alert, animated: true, completion: nil)
+        }
         return AF.request(route).validate(statusCode: 200..<410)
             .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
                 switch response.result {
                 case .success(let model):
-                    print(String.init(data: response.data!, encoding: .utf8))
+                    print(String(data: response.data!, encoding: .utf8))
                 case .failure(let error):
                     print(error)
                 }
+                alert.dismiss(animated: true)
                 completion(response.result)
-        }
+            }.responseString { response in
+                print(response.result)
+            }
     }
 
     
@@ -44,7 +58,7 @@ class APIClient {
         }
     }
     
-    static func uploadElectrictyImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void){
+    static func uploadElectrictyImage(base64Image: String,completion:@escaping (AFResult<EBModel>)->Void){
         do {
             let uploadRouter = try ElectricityBillRouter.upload(image: base64Image).asURLRequest()
             performRequest(route: uploadRouter, completion:completion)
@@ -54,7 +68,7 @@ class APIClient {
         }
     }
     
-    static func uploadInvoiceImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void){
+    static func uploadInvoiceImage(base64Image: String,completion:@escaping (AFResult<InvoiceModel>)->Void){
         do {
             let uploadRouter = try InvoiceRouter.upload(image: base64Image).asURLRequest()
             performRequest(route: uploadRouter, completion:completion)

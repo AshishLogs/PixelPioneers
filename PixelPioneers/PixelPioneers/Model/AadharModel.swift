@@ -18,7 +18,7 @@ struct AadharModel: Codable {
         return [OCRValues(key: "First Name", value: self.FirstName),
                 OCRValues(key: "Last Name", value: self.LastName),
                 OCRValues(key: "Document Number", value: self.DocumentNumber),
-                OCRValues(key: "Date Of Birth", value: self.DateOfBirth)]
+                OCRValues(key: "Date Of Birth", value: self.DateOfBirth)].filter({$0.value != nil })
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var buttonSignIn: UIButton!
     @IBOutlet weak var passwordTF: UITextField!
@@ -15,6 +15,10 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonSignIn.addBorder()
+        passwordTF.delegate = self
+        phoneNumberTF.delegate = self
+        phoneNumberTF.text = "9988765643"
+        passwordTF.text = "PixelPioneers"
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +31,11 @@ class SignInViewController: UIViewController {
         if let registerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? KYCPageViewController {
             self.navigationController?.pushViewController(registerVC, animated: true)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }

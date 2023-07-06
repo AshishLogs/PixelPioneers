@@ -63,6 +63,13 @@ extension APIRouter {
            if httpMethod == .post{
                if let parameters = parameters {
                    let jsonData = Helper.makeHttpBodyWithParameters(parameters)
+                   let bcf = ByteCountFormatter()
+                   bcf.allowedUnits = [.useMB]
+                   bcf.countStyle = .file
+                   if let m = jsonData {
+                       let string = bcf.string(fromByteCount: Int64(m.count))
+                       print(jsonData)
+                   }
                    if let bodyData = jsonData {
                        urlRequest.httpBody = bodyData
                    }

@@ -28,12 +28,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-                            scanner.titleImage = selectedImage
-                            scanner.models = model.list
-                            scanner.titleName = "Aadhar Card"
-                            self.navigationController?.pushViewController(scanner, animated: true)
-                        }
+                        self.moveToListView(selectedImage, models: model.list, title: "Aadhar Card")
                     }
                     
                 case .failure(let failure):
@@ -45,11 +40,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-                            //                            scanner.models = model.list
-                            scanner.titleName = "Credit Card"
-                            self.navigationController?.pushViewController(scanner, animated: true)
-                        }
+                        self.moveToListView(selectedImage, models: model.list, title: "Credit Card")
                     }
                     
                 case .failure(let failure):
@@ -62,12 +53,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-                            scanner.titleImage = selectedImage
-                            scanner.models = model.list
-                            scanner.titleName = "Electricity Bill"
-                            self.navigationController?.pushViewController(scanner, animated: true)
-                        }
+                        self.moveToListView(selectedImage, models: model.list, title: "Electricity Bill")
                     }
                     
                 case .failure(let failure):
@@ -79,12 +65,7 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-                            scanner.titleImage = selectedImage
-                            scanner.models = model.list
-                            scanner.titleName = "Invoice Details"
-                            self.navigationController?.pushViewController(scanner, animated: true)
-                        }
+                        self.moveToListView(selectedImage, models: model.list, title: "Invoice")
                     }
                     
                 case .failure(let failure):
@@ -96,14 +77,8 @@ class LandingVC: UIViewController {
                 switch result {
                 case .success(let model):
                     DispatchQueue.main.async {
-                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-                            scanner.titleImage = selectedImage
-                            scanner.models = model.list
-                            scanner.titleName = "Health Document"
-                            self.navigationController?.pushViewController(scanner, animated: true)
-                        }
+                        self.moveToListView(selectedImage, models: model.list, title: "Health Document")
                     }
-                    
                 case .failure(let failure):
                     print(failure)
                 }

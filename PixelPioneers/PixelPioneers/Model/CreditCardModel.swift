@@ -13,6 +13,12 @@ struct CreditCardModel: Codable {
     let cardNumber: CardNumber?
     let docType: String?
     let expDate: ExpirationDate?
+    
+    var list : [OCRValues] {
+        return [OCRValues(key: "Card Holder Name", value: self.cardHolderName?.value),
+                OCRValues(key: "Card Number", value: self.cardNumber?.value),
+                OCRValues(key: "Expiry Date", value: [self.expDate?.month, self.expDate?.year].compactMap({$0}).joined(separator:" / "))].filter({$0.value != nil })
+    }
 }
 
 struct CardHolderName: Codable {
