@@ -162,9 +162,7 @@ extension LandingVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
             self.navigationController?.pushViewController(registerVC, animated: true)
         }
         case .logout:
-            if let signInVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInViewController") as? SignInViewController {
-                self.dismiss(animated: true)
-            }
+            self.navigationController?.dismiss(animated: true)
         }
     }
 }
