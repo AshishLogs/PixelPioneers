@@ -12,7 +12,7 @@ import CoreImage
 
 public class Utility {
     class func convertImageToBase64(image : UIImage) -> String? {
-        if let img = enhanceImageForOCR(image), let imgData = Utility.compressImage(img, maxSizeInBytes: 3000000)  {
+        if let imgData = Utility.compressImage(image, maxSizeInBytes: 3000000)  {
             let base64 = imgData.base64EncodedString()
             return base64
         }
