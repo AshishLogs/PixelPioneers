@@ -30,8 +30,6 @@
 		85FD2A552A55A6FC00013212 /* Journey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FD2A542A55A6FC00013212 /* Journey.storyboard */; };
 		85FD2A572A55AB6000013212 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A562A55AB6000013212 /* Extensions.swift */; };
 		85FD2A692A55F7C800013212 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A682A55F7C800013212 /* LandingVC.swift */; };
-		85FD2A6C2A56092000013212 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A6A2A56092000013212 /* ServiceCell.swift */; };
-		85FD2A6D2A56092000013212 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FD2A6B2A56092000013212 /* ServiceCell.xib */; };
 		85FD2A722A562FD500013212 /* ElectricityBillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A712A562FD500013212 /* ElectricityBillModel.swift */; };
 		85FD2A742A56311900013212 /* MedicalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A732A56311900013212 /* MedicalModel.swift */; };
 		85FD2A762A5631C000013212 /* InvoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A752A5631C000013212 /* InvoiceModel.swift */; };
@@ -64,8 +62,6 @@
 		85FD2A542A55A6FC00013212 /* Journey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journey.storyboard; sourceTree = "<group>"; };
 		85FD2A562A55AB6000013212 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		85FD2A682A55F7C800013212 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
-		85FD2A6A2A56092000013212 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
-		85FD2A6B2A56092000013212 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		85FD2A712A562FD500013212 /* ElectricityBillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityBillModel.swift; sourceTree = "<group>"; };
 		85FD2A732A56311900013212 /* MedicalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalModel.swift; sourceTree = "<group>"; };
 		85FD2A752A5631C000013212 /* InvoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceModel.swift; sourceTree = "<group>"; };
@@ -129,8 +125,6 @@
 			children = (
 				60E9654D2A55E9AC00014C7F /* OCRScannedListTableViewCell.swift */,
 				60E9654E2A55E9AC00014C7F /* OCRScannedListTableViewCell.xib */,
-				85FD2A6A2A56092000013212 /* ServiceCell.swift */,
-				85FD2A6B2A56092000013212 /* ServiceCell.xib */,
 				8579BC782A56D7DA00E01614 /* ServiceGrid.swift */,
 				8579BC792A56D7DA00E01614 /* ServiceGrid.xib */,
 			);
@@ -263,7 +257,6 @@
 				60E965502A55E9AC00014C7F /* OCRScannedListTableViewCell.xib in Resources */,
 				60E965392A5562E800014C7F /* Assets.xcassets in Resources */,
 				60E965372A5562E600014C7F /* Main.storyboard in Resources */,
-				85FD2A6D2A56092000013212 /* ServiceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +329,6 @@
 				85FD2A692A55F7C800013212 /* LandingVC.swift in Sources */,
 				85FD2A742A56311900013212 /* MedicalModel.swift in Sources */,
 				60E9654C2A55D30F00014C7F /* OCRScannedListViewController.swift in Sources */,
-				85FD2A6C2A56092000013212 /* ServiceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +486,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +520,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
