@@ -12,12 +12,44 @@ import CoreImage
 
 public class Utility {
     class func convertImageToBase64(image : UIImage) -> String? {
-        if let imgData = Utility.compressImage(image, maxSizeInBytes: 3000000)  {
+        if let img = enhanceImageForOCR(image), let imgData = Utility.compressImage(img, maxSizeInBytes: 3000000)  {
             let base64 = imgData.base64EncodedString()
             return base64
         }
         return nil
     }
+    
+   class func enhanceImageForOCR(_ image: UIImage) -> UIImage? {
+        // Convert UIImage to CIImage
+        guard let ciImage = CIImage(image: image) else {
+            return nil
+        }
+        
+        // Create an image context
+        let context = CIContext(options: nil)
+        
+        // Apply a sharpening filter
+        guard let sharpenFilter = CIFilter(name: "CISharpenLuminance") else {
+            return nil
+        }
+        sharpenFilter.setValue(ciImage, forKey: kCIInputImageKey)
+        sharpenFilter.setValue(0.5, forKey: kCIInputSharpnessKey) // Adjust sharpness intensity as needed
+        
+        // Get the output image from the filter
+        guard let outputImage = sharpenFilter.outputImage else {
+            return nil
+        }
+        
+        // Render the output image
+        guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else {
+            return nil
+        }
+        
+        // Create a new UIImage with the sharpened CGImage
+        let sharpenedImage = UIImage(cgImage: cgImage)
+        return sharpenedImage
+    }
+
 
     
     class func compressImage(_ image: UIImage, maxSizeInBytes: Int) -> Data? {
