@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct EBModel: Codable, BaseModel {
-    let amount, billingUnit, consumerID,electricityBoard ,state: String?
+    let amount, billingUnit, consumerID,electricityBoard,pincode ,state: String?
     var data: Data?
     
     enum CodingKeys: String, CodingKey {
@@ -17,12 +17,14 @@ struct EBModel: Codable, BaseModel {
         case consumerID = "consumerId"
         case electricityBoard
         case state
+        case pincode
     }
     
     var list : [OCRValues] {
         return [OCRValues.init(key: "EB Board", value: self.electricityBoard),
                 OCRValues.init(key: "Consumer ID", value: self.consumerID),
                 OCRValues.init(key: "Amount", value: self.amount),
+                OCRValues.init(key: "Pincode", value: self.pincode),
                 OCRValues.init(key: "Billing Unit", value: self.billingUnit)].filter({$0.value != nil && ($0.value ?? "").count > 0 })
     }
 
