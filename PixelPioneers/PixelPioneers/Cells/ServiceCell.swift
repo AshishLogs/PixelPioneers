@@ -15,6 +15,11 @@ class ServiceCell: UITableViewCell {
         super.awakeFromNib()
         serviceTitleLabel.layer.borderWidth = 1.0
         serviceTitleLabel.layer.cornerRadius = 5.0
+        serviceTitleLabel.layer.masksToBounds = true
+        serviceTitleLabel.textColor = .white
+        serviceTitleLabel.backgroundColor = UIColor.init(hex: "7F7F7F")
+        serviceTitleLabel.layer.borderColor = UIColor.white.cgColor
+        self.contentView.backgroundColor = UIColor.init(hex: "252525")
         // Initialization code
     }
 

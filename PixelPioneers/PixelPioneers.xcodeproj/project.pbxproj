@@ -22,6 +22,8 @@
 		60E9654C2A55D30F00014C7F /* OCRScannedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9654B2A55D30F00014C7F /* OCRScannedListViewController.swift */; };
 		60E9654F2A55E9AC00014C7F /* OCRScannedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9654D2A55E9AC00014C7F /* OCRScannedListTableViewCell.swift */; };
 		60E965502A55E9AC00014C7F /* OCRScannedListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E9654E2A55E9AC00014C7F /* OCRScannedListTableViewCell.xib */; };
+		8579BC7A2A56D7DA00E01614 /* ServiceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579BC782A56D7DA00E01614 /* ServiceGrid.swift */; };
+		8579BC7B2A56D7DA00E01614 /* ServiceGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8579BC792A56D7DA00E01614 /* ServiceGrid.xib */; };
 		85FD2A502A55641C00013212 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4C2A55641C00013212 /* SignInViewController.swift */; };
 		85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */; };
 		85FD2A532A55641C00013212 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD2A4F2A55641C00013212 /* Utility.swift */; };
@@ -54,6 +56,8 @@
 		60E9654B2A55D30F00014C7F /* OCRScannedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRScannedListViewController.swift; sourceTree = "<group>"; };
 		60E9654D2A55E9AC00014C7F /* OCRScannedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRScannedListTableViewCell.swift; sourceTree = "<group>"; };
 		60E9654E2A55E9AC00014C7F /* OCRScannedListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCRScannedListTableViewCell.xib; sourceTree = "<group>"; };
+		8579BC782A56D7DA00E01614 /* ServiceGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceGrid.swift; sourceTree = "<group>"; };
+		8579BC792A56D7DA00E01614 /* ServiceGrid.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceGrid.xib; sourceTree = "<group>"; };
 		85FD2A4C2A55641C00013212 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		85FD2A4E2A55641C00013212 /* KYCPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCPageViewController.swift; sourceTree = "<group>"; };
 		85FD2A4F2A55641C00013212 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				60E9654E2A55E9AC00014C7F /* OCRScannedListTableViewCell.xib */,
 				85FD2A6A2A56092000013212 /* ServiceCell.swift */,
 				85FD2A6B2A56092000013212 /* ServiceCell.xib */,
+				8579BC782A56D7DA00E01614 /* ServiceGrid.swift */,
+				8579BC792A56D7DA00E01614 /* ServiceGrid.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8579BC7B2A56D7DA00E01614 /* ServiceGrid.xib in Resources */,
 				60E9653C2A5562E800014C7F /* LaunchScreen.storyboard in Resources */,
 				85FD2A552A55A6FC00013212 /* Journey.storyboard in Resources */,
 				60E965502A55E9AC00014C7F /* OCRScannedListTableViewCell.xib in Resources */,
@@ -325,6 +332,7 @@
 				60E4C59F2A56B7600009BB97 /* RawJSONViewController.swift in Sources */,
 				85FD2A522A55641C00013212 /* KYCPageViewController.swift in Sources */,
 				60E965322A5562E600014C7F /* SceneDelegate.swift in Sources */,
+				8579BC7A2A56D7DA00E01614 /* ServiceGrid.swift in Sources */,
 				85FD2A692A55F7C800013212 /* LandingVC.swift in Sources */,
 				85FD2A742A56311900013212 /* MedicalModel.swift in Sources */,
 				60E9654C2A55D30F00014C7F /* OCRScannedListViewController.swift in Sources */,

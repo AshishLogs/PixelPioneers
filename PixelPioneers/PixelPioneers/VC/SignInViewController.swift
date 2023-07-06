@@ -28,8 +28,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        if let registerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? KYCPageViewController {
-            self.navigationController?.pushViewController(registerVC, animated: true)
+        if let landingVC = UIStoryboard.init(name: "Journey", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? LandingVC {
+            let nav = UINavigationController.init(rootViewController: landingVC)
+            UIApplication.shared.windows.first?.rootViewController = nav
         }
     }
     

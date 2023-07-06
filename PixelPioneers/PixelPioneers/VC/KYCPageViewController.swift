@@ -17,6 +17,8 @@ class KYCPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonSkip.isHidden = !isFirstLaunch
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         // Do any additional setup after loading the view.
     }
     
@@ -46,7 +48,7 @@ class KYCPageViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         showAlert(
           style: .actionSheet,
-          title: DocumentType.adhar.message,
+          title: ServiceType.adhar.message,
           message: nil,
           actions: [photoLibraryAction, cameraAction, cancelAction],
           completion: nil)

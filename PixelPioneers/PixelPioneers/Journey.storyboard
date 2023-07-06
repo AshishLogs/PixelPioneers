@@ -16,34 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Service " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVp-Nf-48G">
-                                <rect key="frame" x="20" y="79" width="353" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="MRE-DZ-Lt6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P8x-j6-Oox">
-                                <rect key="frame" x="0.0" y="139" width="393" height="713"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NWI-Ex-xXA">
+                                <rect key="frame" x="0.0" y="129" width="393" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xuv-hd-DYe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="mrK-hG-Mth">
+                                <rect key="frame" x="0.0" y="59" width="393" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="jXI-dd-QTC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tJG-aO-qBM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BVp-Nf-48G" firstAttribute="leading" secondItem="tJG-aO-qBM" secondAttribute="leading" constant="20" id="7uP-Kd-BF0"/>
-                            <constraint firstItem="P8x-j6-Oox" firstAttribute="top" secondItem="BVp-Nf-48G" secondAttribute="bottom" constant="20" id="Ewx-gA-YQb"/>
-                            <constraint firstItem="tJG-aO-qBM" firstAttribute="trailing" secondItem="BVp-Nf-48G" secondAttribute="trailing" constant="20" id="G2I-Sq-hAR"/>
-                            <constraint firstItem="BVp-Nf-48G" firstAttribute="top" secondItem="tJG-aO-qBM" secondAttribute="top" constant="20" id="TJE-nM-kxc"/>
-                            <constraint firstAttribute="trailing" secondItem="P8x-j6-Oox" secondAttribute="trailing" id="nH4-Wb-jVx"/>
-                            <constraint firstItem="P8x-j6-Oox" firstAttribute="leading" secondItem="tJG-aO-qBM" secondAttribute="leading" id="oHi-BW-DOJ"/>
-                            <constraint firstAttribute="bottom" secondItem="P8x-j6-Oox" secondAttribute="bottom" id="uoh-cn-9W7"/>
+                            <constraint firstItem="mrK-hG-Mth" firstAttribute="leading" secondItem="tJG-aO-qBM" secondAttribute="leading" id="HAI-80-OS6"/>
+                            <constraint firstItem="NWI-Ex-xXA" firstAttribute="trailing" secondItem="tJG-aO-qBM" secondAttribute="trailing" id="RlE-YS-gCv"/>
+                            <constraint firstItem="NWI-Ex-xXA" firstAttribute="bottom" secondItem="tJG-aO-qBM" secondAttribute="bottom" id="XaS-aH-1rC"/>
+                            <constraint firstItem="NWI-Ex-xXA" firstAttribute="leading" secondItem="tJG-aO-qBM" secondAttribute="leading" id="bTK-r6-14B"/>
+                            <constraint firstItem="mrK-hG-Mth" firstAttribute="trailing" secondItem="tJG-aO-qBM" secondAttribute="trailing" id="cjY-Dd-kOC"/>
+                            <constraint firstItem="mrK-hG-Mth" firstAttribute="top" secondItem="tJG-aO-qBM" secondAttribute="top" id="ecO-lB-EU7"/>
+                            <constraint firstItem="NWI-Ex-xXA" firstAttribute="top" secondItem="mrK-hG-Mth" secondAttribute="bottom" id="iKd-TV-mv6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="P8x-j6-Oox" id="8af-uB-uNj"/>
+                        <outlet property="collectionView" destination="NWI-Ex-xXA" id="Ljc-us-4JT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yI3-gL-V1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -52,6 +56,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="header" width="640" height="178.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

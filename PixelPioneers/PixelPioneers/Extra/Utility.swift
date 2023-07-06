@@ -80,12 +80,13 @@ public class Utility {
     
 }
 
-public enum DocumentType : String  {
-    case medical = "Read Medical Document"
-    case invoice = "Read Invoice"
-    case card    = "Read Credit/Debit Card"
-    case electricity = "Read Electricity Bill"
+public enum ServiceType : String  {
+    case medical = "Medical Document"
+    case invoice = "Invoice"
+    case card    = "Credit/Debit Card"
+    case electricity = "Electricity Bill"
     case adhar   = "Aadhar KYC"
+    case logout  = "Logout"
     
     var message : String {
         switch self {
@@ -99,6 +100,21 @@ public enum DocumentType : String  {
             return "IMPORTANT \n 1. Please ensure the consumer ID/number and the electricity board name are visible clearly in the image.\n 2. You can also upload digital copy, if you have one."
         case .adhar:
             return "IMPORTANT \n 1. For best results, place your aadhar card on a table under good lighting conditions, hold your phone straight face down and capture the photo.\n 2. You can also upload digital copy, if you have one."
+        case .logout:
+            return "We are logging you out!!!"
+        }
+    }
+    
+    var imageName : String {
+        switch self {
+        case .medical:
+            return "healthGrid"
+        case .invoice:
+            return "invoiceGrid"
+        case .electricity: return "ebGrid"
+        case .card : return "card"
+        case .adhar: return "adharGrid"
+        case .logout : return "logoutGrid"
         }
     }
     
