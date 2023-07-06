@@ -90,15 +90,15 @@ public enum DocumentType : String  {
     var message : String {
         switch self {
         case .medical:
-            return ""
+            return "IMPORTANT \n 1. For best results, place your prescription/medical report/medical bill on a table under good lighting conditions, hold your phone straight face down and capture the photo.\n 2. You can also upload digital copy, if you have one."
         case .invoice:
-            return ""
+            return "IMPORTANT \n 1. For best results, place your printed invoice on a table under good lighting conditions, hold your phone face down and capture the photo. \n 2. You can also upload digital copy, if you have one."
         case .card:
-            return ""
+            return "IMPORTANT \n 1. For best results, place your debit card or credit card on a table under good lighting conditions, hold your phone face down and capture the photo.\n 2. Accepted formats include Visa, MasterCard, RuPay, American Express, Maestro, Discover, Diner’s Club and more."
         case .electricity:
-            return ""
+            return "IMPORTANT \n 1. Please ensure the consumer ID/number and the electricity board name are visible clearly in the image.\n 2. You can also upload digital copy, if you have one."
         case .adhar:
-            return ""
+            return "IMPORTANT \n 1. For best results, place your aadhar card on a table under good lighting conditions, hold your phone straight face down and capture the photo.\n 2. You can also upload digital copy, if you have one."
         }
     }
     

@@ -49,7 +49,7 @@ extension UIViewController {
             if models.count > 0 {
                 self.navigationController?.pushViewController(scanner, animated: true)
             } else {
-                self.showToast(message: "Something Went Wrong!!!")
+                self.showToast(message: "Sorry. No usable data found from your photo.")
             }
         }
     }
