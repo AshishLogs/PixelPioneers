@@ -86,4 +86,20 @@ public enum DocumentType : String  {
     case card    = "Read Credit/Debit Card"
     case electricity = "Read Electricity Bill"
     case adhar   = "Aadhar KYC"
+    
+    var message : String {
+        switch self {
+        case .medical:
+            return ""
+        case .invoice:
+            return ""
+        case .card:
+            return ""
+        case .electricity:
+            return ""
+        case .adhar:
+            return ""
+        }
+    }
+    
 }

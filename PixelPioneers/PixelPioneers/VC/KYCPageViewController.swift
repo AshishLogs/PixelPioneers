@@ -46,7 +46,7 @@ class KYCPageViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         showAlert(
           style: .actionSheet,
-          title: "Choose Your Image",
+          title: DocumentType.adhar.message,
           message: nil,
           actions: [photoLibraryAction, cameraAction, cancelAction],
           completion: nil)

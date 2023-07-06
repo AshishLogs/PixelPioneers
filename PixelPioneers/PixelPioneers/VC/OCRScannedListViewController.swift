@@ -24,9 +24,19 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
         registerTableViewCells()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.navigationItem.title = titleName ?? "OCR"
-        let rightBarButton = UIBarButtonItem(title: "Raw JSON", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        let titleLabel = UILabel()
+        titleLabel.text = titleName ?? "OCR"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
+        self.navigationItem.titleView = titleLabel
+
+        let appearance = UINavigationBar.appearance()
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let rightBarButton = UIBarButtonItem(title: "JSON", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        self.navigationController?.navigationBar.tintColor = .white
         navigationItem.rightBarButtonItem = rightBarButton
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        navigationItem.leftBarButtonItem?.tintColor = .white
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -47,8 +57,15 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 150))
-        headerView.backgroundColor = .white
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: headerView.frame.width, height: headerView.frame.height))
+        headerView.backgroundColor = UIColor.init(red: 50.0/255.0, green: 50.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+        
+        let titleLabel = UILabel(frame: CGRect(x: 8, y: 0, width: tableView.frame.width - 8, height: 35.0))
+        titleLabel.text = "Scanned Document"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 20.0)
+        headerView.addSubview(titleLabel)
+        
+        let imageView = UIImageView(frame: CGRect(x: 8, y: 45.0, width: headerView.frame.width - 8, height: headerView.frame.height))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image = titleImage
@@ -60,7 +77,7 @@ class OCRScannedListViewController: UIViewController, UITableViewDelegate, UITab
         if titleImage == nil {
             return 0
         }
-        return 150
+        return 200.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
