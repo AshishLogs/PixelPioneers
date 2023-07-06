@@ -29,10 +29,6 @@ enum UploadAadharRouter {
 
 extension UploadAadharRouter : APIRouter {
     
-    var path: String {
-        return "/uhi/webhook/postorder/analyseDoc"
-    }
-    
     var parameters: Alamofire.Parameters? {
         switch self {
         case .upload(let image):

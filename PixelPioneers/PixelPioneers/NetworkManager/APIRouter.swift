@@ -26,6 +26,10 @@ extension APIRouter {
         return "https://digitalproxy-staging.paytm.com"
     }
     
+    var path : String {
+        return "/uhi/webhook/postorder/analyseDoc"
+    }
+    
     var headers: HTTPHeaders? {
         return ["Content-Type": "application/json"]
     }

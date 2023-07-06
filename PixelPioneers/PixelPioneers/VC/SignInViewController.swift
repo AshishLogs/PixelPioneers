@@ -19,6 +19,11 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
+        if (passwordTF.text?.count ?? 0) < 1 || (phoneNumberTF.text?.count ?? 0) < 1 {
+            showToast(message: "Please enter both of the details")
+            return
+        }
+        
         if let registerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "KYCPageViewController") as? KYCPageViewController {
             self.navigationController?.pushViewController(registerVC, animated: true)
         }

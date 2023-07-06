@@ -21,18 +21,94 @@ class LandingVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func showAlert(
-      style: UIAlertController.Style,
-      title: String?,
-      message: String?,
-      actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .cancel, handler: nil)],
-      completion: (() -> Swift.Void)? = nil)
-    {
-      let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-      for action in actions {
-        alert.addAction(action)
-      }
-        self.present(alert, animated: true, completion: completion)
+    func actionOnModeSelection(imageData : String, selectedImage : UIImage) {
+        switch self.currentMode {
+        case .adhar:
+            APIClient.uploadAadharImage(base64Image: imageData) { result in
+                switch result {
+                case .success(let model):
+                    DispatchQueue.main.async {
+                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+                            scanner.titleImage = selectedImage
+                            scanner.models = model.list
+                            scanner.titleName = "Aadhar Card"
+                            self.navigationController?.pushViewController(scanner, animated: true)
+                        }
+                    }
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        case .card:
+            APIClient.uploadCreditCardImage(base64Image: imageData) { result in
+                switch result {
+                case .success(let model):
+                    DispatchQueue.main.async {
+                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+                            //                            scanner.models = model.list
+                            scanner.titleName = "Credit Card"
+                            self.navigationController?.pushViewController(scanner, animated: true)
+                        }
+                    }
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
+                
+            }
+        case .electricity:
+            APIClient.uploadElectrictyImage(base64Image: imageData) { result in
+                switch result {
+                case .success(let model):
+                    DispatchQueue.main.async {
+                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+                            scanner.titleImage = selectedImage
+                            scanner.models = model.list
+                            scanner.titleName = "Electricity Bill"
+                            self.navigationController?.pushViewController(scanner, animated: true)
+                        }
+                    }
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        case .invoice:
+            APIClient.uploadInvoiceImage(base64Image: imageData) { result in
+                switch result {
+                case .success(let model):
+                    DispatchQueue.main.async {
+                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+                            scanner.titleImage = selectedImage
+                            scanner.models = model.list
+                            scanner.titleName = "Invoice Details"
+                            self.navigationController?.pushViewController(scanner, animated: true)
+                        }
+                    }
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        case .medical:
+            APIClient.uploadMedicalDocumentImage(base64Image: imageData) { result in
+                switch result {
+                case .success(let model):
+                    DispatchQueue.main.async {
+                        if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
+                            scanner.titleImage = selectedImage
+                            scanner.models = model.list
+                            scanner.titleName = "Health Document"
+                            self.navigationController?.pushViewController(scanner, animated: true)
+                        }
+                    }
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        }
     }
     
 }
@@ -98,22 +174,7 @@ extension LandingVC : UIImagePickerControllerDelegate, UINavigationControllerDel
         picker.dismiss(animated: true)
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if let imageData = Utility.convertImageToBase64(image: selectedImage){
-                APIClient.uploadAadharImage(base64Image: imageData) { result in
-                    switch result {
-                    case .success(let model):
-                        DispatchQueue.main.async {
-                            if let scanner = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OCRScannedListViewController") as? OCRScannedListViewController {
-                                scanner.titleImage = selectedImage
-                                scanner.models = model.list
-                                scanner.titleName = "Aadhar Card"
-                                self.navigationController?.pushViewController(scanner, animated: true)
-                            }
-                        }
-                        
-                    case .failure(let failure):
-                        print(failure)
-                    }
-                }
+                actionOnModeSelection(imageData: imageData, selectedImage: selectedImage)
             }
         }
     }

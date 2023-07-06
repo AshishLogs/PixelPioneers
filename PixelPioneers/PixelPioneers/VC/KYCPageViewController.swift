@@ -52,25 +52,13 @@ class KYCPageViewController: UIViewController {
           completion: nil)
     }
     
-    func showAlert(
-      style: UIAlertController.Style,
-      title: String?,
-      message: String?,
-      actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .cancel, handler: nil)],
-      completion: (() -> Swift.Void)? = nil)
-    {
-      let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-      for action in actions {
-        alert.addAction(action)
-      }
-        self.present(alert, animated: true, completion: completion)
-    }
+
 
     
     @IBAction func skipToHomeAction(_ sender: UIButton) {
         if let landingVC = UIStoryboard.init(name: "Journey", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? LandingVC {
             let nav = UINavigationController.init(rootViewController: landingVC)
-            UIApplication.shared.keyWindow?.rootViewController = nav
+            UIApplication.shared.windows.first?.rootViewController = nav
         }
     }
     /*

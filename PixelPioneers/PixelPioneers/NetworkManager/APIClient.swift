@@ -44,6 +44,35 @@ class APIClient {
         }
     }
     
+    static func uploadElectrictyImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void){
+        do {
+            let uploadRouter = try ElectricityBillRouter.upload(image: base64Image).asURLRequest()
+            performRequest(route: uploadRouter, completion:completion)
+        }
+        catch (_){
+            completion(.failure(AFError.explicitlyCancelled))
+        }
+    }
+    
+    static func uploadInvoiceImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void){
+        do {
+            let uploadRouter = try InvoiceRouter.upload(image: base64Image).asURLRequest()
+            performRequest(route: uploadRouter, completion:completion)
+        }
+        catch (_){
+            completion(.failure(AFError.explicitlyCancelled))
+        }
+    }
+    
+    static func uploadMedicalDocumentImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void){
+        do {
+            let uploadRouter = try MedicalRouter.upload(image: base64Image).asURLRequest()
+            performRequest(route: uploadRouter, completion:completion)
+        }
+        catch (_){
+            completion(.failure(AFError.explicitlyCancelled))
+        }
+    }
 }
 
 extension Data {
