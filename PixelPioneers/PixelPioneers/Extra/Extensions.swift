@@ -25,6 +25,7 @@ extension UIViewController {
       completion: (() -> Swift.Void)? = nil)
     {
       let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        alert.view.tintColor = UIColor(red: (50.0/255.0), green: (50.0/255.0), blue: (50.0/255.0), alpha: 1.0)
       for action in actions {
         alert.addAction(action)
       }

@@ -87,7 +87,7 @@ class APIClient {
         }
     }
     
-    static func uploadMedicalDocumentImage(base64Image: String,completion:@escaping (AFResult<AadharModel>)->Void){
+    static func uploadMedicalDocumentImage(base64Image: String,completion:@escaping (AFResult<InvoiceModel>)->Void){
         do {
             let uploadRouter = try MedicalRouter.upload(image: base64Image).asURLRequest()
             performRequest(route: uploadRouter, completion:completion)
