@@ -18,7 +18,7 @@ class APIClient {
 
     @discardableResult
     private static func performRequest<T:BaseModel>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
-        if let v = UIApplication.shared.windows.last?.rootViewController?.presentedViewController {
+        if let v = UIApplication.shared.windows.first?.rootViewController?.presentedViewController {
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             loadingIndicator.hidesWhenStopped = true
             loadingIndicator.style = UIActivityIndicatorView.Style.large
