@@ -151,7 +151,6 @@ public class Utility {
         guard let ciImage = CIImage(image: image) else {
             return nil
         }
-        // Apply histogram adjustment
         let filter = CIFilter(name: "CIAutoHistogram")
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let outputImage = filter?.outputImage {
