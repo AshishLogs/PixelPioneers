@@ -147,6 +147,25 @@ public class Utility {
        return newImage
    }
     
+    func fixHistogramAndIncreaseSaturation(image: UIImage) -> UIImage? {
+        guard let ciImage = CIImage(image: image) else {
+            return nil
+        }
+        // Apply histogram adjustment
+        let filter = CIFilter(name: "CIAutoHistogram")
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        if let outputImage = filter?.outputImage {
+            // Increase saturation
+            let adjustedImage = outputImage.applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey: 2.0])
+            let context = CIContext(options: nil)
+            if let cgImage = context.createCGImage(adjustedImage, from: adjustedImage.extent) {
+                let processedImage = UIImage(cgImage: cgImage)
+                return processedImage
+            }
+        }
+        return nil
+    }
+    
 }
 
 public enum ServiceType : String  {
