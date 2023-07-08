@@ -70,6 +70,41 @@ public class Utility {
         
         return compressedData
     }
+    
+    func convertToBlackAndWhite(image: UIImage) -> UIImage? {
+        guard let ciImage = CIImage(image: image) else {
+            return nil
+        }
+        let filter = CIFilter(name: "CIPhotoEffectMono")
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        if let outputImage = filter?.outputImage {
+            let context = CIContext(options: nil)
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                let processedImage = UIImage(cgImage: cgImage)
+                return processedImage
+            }
+        }
+        return nil
+    }
+    
+    func enhanceImageSharpAndContrast(image: UIImage) -> UIImage? {
+        guard let ciImage = CIImage(image: image) else {
+            return nil
+        }
+        let filter = CIFilter(name: "CISharpenLuminance")
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        filter?.setValue(2.0, forKey: kCIInputSharpnessKey)
+        if let outputImage = filter?.outputImage {
+            let context = CIContext(options: nil)
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                let enhancedImage = UIImage(cgImage: cgImage)
+                if let adjustedImage = enhancedImage.ciImage?.applyingFilter(kCIInputContrastKey) {
+                    return UIImage(ciImage: adjustedImage)
+                }
+            }
+        }
+        return nil
+    }
 
     
    class func resizeImage(image: UIImage) -> UIImage? {
